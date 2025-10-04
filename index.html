@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HotelResr - Premium hotel booking system with luxury accommodations, activities, and seamless booking experience. Book your dream vacation with ease.">
+    <meta name="keywords" content="hotel booking, luxury hotels, vacation booking, travel, accommodation, spa, dining, activities">
+    <meta name="author" content="HotelReservations">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#6366f1">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="HotelReservations - Premium Hotel Booking">
+    <meta property="og:description" content="Experience luxury accommodations and exciting activities at the world's finest hotels. Book your dream vacation with ease and confidence.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HotelReservations - Premium Hotel Booking">
+    <meta name="twitter:description" content="Experience luxury accommodations and exciting activities at the world's finest hotels.">
+    
+    <title>HotelReservations - Premium Hotel Booking System</title>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏨</text></svg>">
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link" data-en="Skip to main content" data-ar="انتقل إلى المحتوى الرئيسي">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="https://hotelreservations.com" class="logo-link">
+                    <i class="fas fa-hotel" aria-hidden="true"></i>
+                    <span data-en="HotelReservations" data-ar="حجوزات الفنادق">HotelReservations</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu" role="menubar">
+                <a href="#home" class="nav-link" data-en="Home" data-ar="الرئيسية" role="menuitem" aria-label="Go to home section">Home</a>
+                <a href="#hotels" class="nav-link" data-en="Hotels" data-ar="الفنادق" role="menuitem" aria-label="View available hotels">Hotels</a>
+                <a href="#activities" class="nav-link" data-en="Activities" data-ar="الأنشطة" role="menuitem" aria-label="Explore hotel activities">Activities</a>
+                <a href="#about" class="nav-link" data-en="About" data-ar="حولنا" role="menuitem" aria-label="Learn about HotelReservations">About</a>
+            </div>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode" aria-label="Toggle dark mode" aria-pressed="false">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+                <button class="language-toggle" id="languageToggle" title="Switch Language" aria-label="Switch language" aria-pressed="false">
+                    <i class="fas fa-globe" aria-hidden="true"></i>
+                    <span data-en="EN" data-ar="عربي">EN</span>
+                </button>
+                <div class="nav-auth">
+                    <button class="btn btn-outline" id="signInBtn" data-en="Sign In" data-ar="تسجيل الدخول" aria-label="Sign in to your account">Sign In</button>
+                    <button class="btn btn-primary" id="signUpBtn" data-en="Sign Up" data-ar="إنشاء حساب" aria-label="Create a new account">Sign Up</button>
+                </div>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main id="main-content">
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span data-en="Discover Your Perfect" data-ar="اكتشف">Discover Your Perfect</span>
+                    <span class="gradient-text" data-en="Hotel Stay" data-ar="إقامة فندقية">Hotel Stay</span>
+                </h1>
+                <p class="hero-description" data-en="Experience luxury accommodations and exciting activities at the world's finest hotels. Book your dream vacation with ease and confidence." data-ar="استمتع بإقامة فاخرة وأنشطة مثيرة في أفضل فنادق العالم. احجز إجازتك المثالية بسهولة وثقة.">
+                    Experience luxury accommodations and exciting activities at the world's finest hotels. Book your dream vacation with ease and confidence.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-large" id="startBookingBtn">
+                        <i class="fas fa-search"></i>
+                        <span data-en="Find Hotels" data-ar="البحث عن فنادق">Find Hotels</span>
+                    </button>
+                    <button class="btn btn-outline btn-large" id="exploreActivitiesBtn">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span data-en="Explore Activities" data-ar="استكشف الأنشطة">Explore Activities</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <div class="card-header">
+                        <div class="card-avatar"></div>
+                        <div class="card-info">
+                            <h4 data-en="Ahmed Al-Rashid" data-ar="أحمد الراشد">Ahmed Al-Rashid</h4>
+                            <p data-en="VIP Member" data-ar="عضو مميز">VIP Member</p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="booking-item">
+                            <i class="fas fa-hotel"></i>
+                            <span data-en="Luxury Suite" data-ar="جناح فاخر">Luxury Suite</span>
+                            <span class="time">3 Days</span>
+                        </div>
+                        <div class="booking-item">
+                            <i class="fas fa-swimming-pool"></i>
+                            <span data-en="Pool Access" data-ar="وصول للمسبح">Pool Access</span>
+                            <span class="time">All Day</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotels Section -->
+    <section id="hotels" class="hotels">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Featured Hotels" data-ar="الفنادق المميزة">Featured Hotels</h2>
+                <p data-en="Discover our handpicked selection of luxury hotels worldwide" data-ar="اكتشف مجموعتنا المختارة بعناية من الفنادق الفاخرة حول العالم">Discover our handpicked selection of luxury hotels worldwide</p>
+            </div>
+            <div class="hotels-grid">
+                <div class="hotel-card" data-hotel="burj-al-arab">
+                    <div class="hotel-image">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop" alt="Burj Al Arab">
+                        <div class="hotel-badge">5★</div>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 data-en="Burj Al Arab" data-ar="برج العرب">Burj Al Arab</h3>
+                        <p class="hotel-location" data-en="Dubai, UAE" data-ar="دبي، الإمارات">Dubai, UAE</p>
+                        <p class="hotel-description" data-en="Iconic sail-shaped luxury hotel with stunning views and world-class amenities" data-ar="فندق فاخر على شكل شراع مع إطلالات خلابة ومرافق عالمية المستوى">Iconic sail-shaped luxury hotel with stunning views and world-class amenities</p>
+                        <div class="hotel-features">
+                            <span class="feature" data-en="Beach Access" data-ar="وصول للشاطئ">Beach Access</span>
+                            <span class="feature" data-en="Spa" data-ar="سبا">Spa</span>
+                            <span class="feature" data-en="Pool" data-ar="مسبح">Pool</span>
+                        </div>
+                        <div class="hotel-price">
+                            <span class="price" data-en="From $800/night" data-ar="من 800 دولار/ليلة">From $800/night</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hotel-card" data-hotel="ritz-paris">
+                    <div class="hotel-image">
+                        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=300&fit=crop" alt="Ritz Paris">
+                        <div class="hotel-badge">5★</div>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 data-en="The Ritz Paris" data-ar="ريتز باريس">The Ritz Paris</h3>
+                        <p class="hotel-location" data-en="Paris, France" data-ar="باريس، فرنسا">Paris, France</p>
+                        <p class="hotel-description" data-en="Historic luxury hotel in the heart of Paris with elegant French charm" data-ar="فندق فاخر تاريخي في قلب باريس مع سحر فرنسي أنيق">Historic luxury hotel in the heart of Paris with elegant French charm</p>
+                        <div class="hotel-features">
+                            <span class="feature" data-en="City Center" data-ar="وسط المدينة">City Center</span>
+                            <span class="feature" data-en="Fine Dining" data-ar="مطعم راقي">Fine Dining</span>
+                            <span class="feature" data-en="Spa" data-ar="سبا">Spa</span>
+                        </div>
+                        <div class="hotel-price">
+                            <span class="price" data-en="From $600/night" data-ar="من 600 دولار/ليلة">From $600/night</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hotel-card" data-hotel="marina-bay">
+                    <div class="hotel-image">
+                        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&h=300&fit=crop" alt="Marina Bay Sands">
+                        <div class="hotel-badge">5★</div>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 data-en="Marina Bay Sands" data-ar="مارينا باي ساندز">Marina Bay Sands</h3>
+                        <p class="hotel-location" data-en="Singapore" data-ar="سنغافورة">Singapore</p>
+                        <p class="hotel-description" data-en="Futuristic hotel with iconic rooftop infinity pool and stunning city views" data-ar="فندق مستقبلي مع مسبح لا نهائي على السطح وإطلالات خلابة على المدينة">Futuristic hotel with iconic rooftop infinity pool and stunning city views</p>
+                        <div class="hotel-features">
+                            <span class="feature" data-en="Infinity Pool" data-ar="مسبح لا نهائي">Infinity Pool</span>
+                            <span class="feature" data-en="Casino" data-ar="كازينو">Casino</span>
+                            <span class="feature" data-en="Shopping" data-ar="تسوق">Shopping</span>
+                        </div>
+                        <div class="hotel-price">
+                            <span class="price" data-en="From $400/night" data-ar="من 400 دولار/ليلة">From $400/night</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hotel-card" data-hotel="four-seasons">
+                    <div class="hotel-image">
+                        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400&h=300&fit=crop" alt="Four Seasons">
+                        <div class="hotel-badge">5★</div>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 data-en="Four Seasons Resort" data-ar="فور سيزونز ريزورت">Four Seasons Resort</h3>
+                        <p class="hotel-location" data-en="Maldives" data-ar="المالديف">Maldives</p>
+                        <p class="hotel-description" data-en="Tropical paradise with overwater bungalows and pristine beaches" data-ar="جنة استوائية مع أكواخ فوق الماء وشواطئ نقية">Tropical paradise with overwater bungalows and pristine beaches</p>
+                        <div class="hotel-features">
+                            <span class="feature" data-en="Overwater Villa" data-ar="فيلا فوق الماء">Overwater Villa</span>
+                            <span class="feature" data-en="Diving" data-ar="غوص">Diving</span>
+                            <span class="feature" data-en="Spa" data-ar="سبا">Spa</span>
+                        </div>
+                        <div class="hotel-price">
+                            <span class="price" data-en="From $1200/night" data-ar="من 1200 دولار/ليلة">From $1200/night</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hotel-card" data-hotel="palace-istanbul">
+                    <div class="hotel-image">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=300&fit=crop" alt="Palace Istanbul">
+                        <div class="hotel-badge">5★</div>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 data-en="Palace Istanbul" data-ar="قصر إسطنبول">Palace Istanbul</h3>
+                        <p class="hotel-location" data-en="Istanbul, Turkey" data-ar="إسطنبول، تركيا">Istanbul, Turkey</p>
+                        <p class="hotel-description" data-en="Historic luxury hotel with stunning Bosphorus views and Ottoman architecture" data-ar="فندق فاخر تاريخي مع إطلالات خلابة على البوسفور والعمارة العثمانية">Historic luxury hotel with stunning Bosphorus views and Ottoman architecture</p>
+                        <div class="hotel-features">
+                            <span class="feature" data-en="Bosphorus View" data-ar="إطلالة على البوسفور">Bosphorus View</span>
+                            <span class="feature" data-en="Historic" data-ar="تاريخي">Historic</span>
+                            <span class="feature" data-en="Spa" data-ar="سبا">Spa</span>
+                        </div>
+                        <div class="hotel-price">
+                            <span class="price" data-en="From $450/night" data-ar="من 450 دولار/ليلة">From $450/night</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hotel-card" data-hotel="aman-tokyo">
+                    <div class="hotel-image">
+                        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=400&h=300&fit=crop" alt="Aman Tokyo">
+                        <div class="hotel-badge">5★</div>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 data-en="Aman Tokyo" data-ar="أمان طوكيو">Aman Tokyo</h3>
+                        <p class="hotel-location" data-en="Tokyo, Japan" data-ar="طوكيو، اليابان">Tokyo, Japan</p>
+                        <p class="hotel-description" data-en="Ultra-luxury urban resort with minimalist design and panoramic city views" data-ar="منتجع حضري فائق الفخامة بتصميم بسيط وإطلالات بانورامية على المدينة">Ultra-luxury urban resort with minimalist design and panoramic city views</p>
+                        <div class="hotel-features">
+                            <span class="feature" data-en="City Views" data-ar="إطلالات على المدينة">City Views</span>
+                            <span class="feature" data-en="Minimalist" data-ar="بسيط">Minimalist</span>
+                            <span class="feature" data-en="Wellness" data-ar="عافية">Wellness</span>
+                        </div>
+                        <div class="hotel-price">
+                            <span class="price" data-en="From $900/night" data-ar="من 900 دولار/ليلة">From $900/night</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hotel-card" data-hotel="belmond-copacabana">
+                    <div class="hotel-image">
+                        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=300&fit=crop" alt="Belmond Copacabana">
+                        <div class="hotel-badge">5★</div>
+                    </div>
+                    <div class="hotel-content">
+                        <h3 data-en="Belmond Copacabana Palace" data-ar="قصر بلموند كوباكابانا">Belmond Copacabana Palace</h3>
+                        <p class="hotel-location" data-en="Rio de Janeiro, Brazil" data-ar="ريو دي جانيرو، البرازيل">Rio de Janeiro, Brazil</p>
+                        <p class="hotel-description" data-en="Iconic beachfront hotel with Art Deco architecture and legendary service" data-ar="فندق ساحلي أيقوني بعمارة آرت ديكو وخدمة أسطورية">Iconic beachfront hotel with Art Deco architecture and legendary service</p>
+                        <div class="hotel-features">
+                            <span class="feature" data-en="Beachfront" data-ar="على الشاطئ">Beachfront</span>
+                            <span class="feature" data-en="Art Deco" data-ar="آرت ديكو">Art Deco</span>
+                            <span class="feature" data-en="Pool" data-ar="مسبح">Pool</span>
+                        </div>
+                        <div class="hotel-price">
+                            <span class="price" data-en="From $550/night" data-ar="من 550 دولار/ليلة">From $550/night</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="activities">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Hotel Activities" data-ar="أنشطة الفندق">Hotel Activities</h2>
+                <p data-en="Enhance your stay with our exclusive hotel activities and experiences" data-ar="عزز إقامتك مع أنشطة وتجارب الفندق الحصرية">Enhance your stay with our exclusive hotel activities and experiences</p>
+            </div>
+            <div class="activities-grid">
+                <div class="activity-card" data-activity="spa">
+                    <div class="activity-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3 data-en="Luxury Spa" data-ar="سبا فاخر">Luxury Spa</h3>
+                    <p data-en="Relax and rejuvenate with premium spa treatments and wellness services" data-ar="استرخ واستعد نشاطك مع علاجات سبا فاخرة وخدمات العافية">Relax and rejuvenate with premium spa treatments and wellness services</p>
+                    <div class="activity-price" data-en="From $150" data-ar="من 150 دولار">From $150</div>
+                </div>
+                <div class="activity-card" data-activity="dining">
+                    <div class="activity-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 data-en="Fine Dining" data-ar="مطعم راقي">Fine Dining</h3>
+                    <p data-en="Experience world-class cuisine with Michelin-starred chefs and exclusive menus" data-ar="استمتع بمأكولات عالمية المستوى مع طهاة حاصلين على نجمة ميشلان وقوائم حصرية">Experience world-class cuisine with Michelin-starred chefs and exclusive menus</p>
+                    <div class="activity-price" data-en="From $80" data-ar="من 80 دولار">From $80</div>
+                </div>
+                <div class="activity-card" data-activity="fitness">
+                    <div class="activity-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3 data-en="Fitness Center" data-ar="مركز لياقة">Fitness Center</h3>
+                    <p data-en="State-of-the-art fitness facilities with personal trainers and group classes" data-ar="مرافق لياقة بدنية متطورة مع مدربين شخصيين ودروس جماعية">State-of-the-art fitness facilities with personal trainers and group classes</p>
+                    <div class="activity-price" data-en="From $25" data-ar="من 25 دولار">From $25</div>
+                </div>
+                <div class="activity-card" data-activity="pool">
+                    <div class="activity-icon">
+                        <i class="fas fa-swimming-pool"></i>
+                    </div>
+                    <h3 data-en="Pool & Beach" data-ar="مسبح وشاطئ">Pool & Beach</h3>
+                    <p data-en="Enjoy infinity pools, private beaches, and water sports activities" data-ar="استمتع بمسابح لا نهائية وشواطئ خاصة وأنشطة رياضية مائية">Enjoy infinity pools, private beaches, and water sports activities</p>
+                    <div class="activity-price" data-en="Included" data-ar="مشمول">Included</div>
+                </div>
+                <div class="activity-card" data-activity="entertainment">
+                    <div class="activity-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3 data-en="Entertainment" data-ar="ترفيه">Entertainment</h3>
+                    <p data-en="Live music, shows, and exclusive events for hotel guests" data-ar="موسيقى حية وعروض وفعاليات حصرية لنزلاء الفندق">Live music, shows, and exclusive events for hotel guests</p>
+                    <div class="activity-price" data-en="From $50" data-ar="من 50 دولار">From $50</div>
+                </div>
+                <div class="activity-card" data-activity="concierge">
+                    <div class="activity-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3 data-en="Concierge Service" data-ar="خدمة الكونسيرج">Concierge Service</h3>
+                    <p data-en="Personalized assistance with reservations, tours, and local recommendations" data-ar="مساعدة شخصية مع الحجوزات والجولات والتوصيات المحلية">Personalized assistance with reservations, tours, and local recommendations</p>
+                    <div class="activity-price" data-en="Included" data-ar="مشمول">Included</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Authentication Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle" data-en="Sign In" data-ar="تسجيل الدخول">Sign In</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="authForm">
+                    <div class="form-group">
+                        <label for="email" data-en="Email" data-ar="البريد الإلكتروني">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="example@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" data-en="Password" data-ar="كلمة المرور">Password</label>
+                        <input type="password" id="password" name="password" required placeholder="••••••••">
+                    </div>
+                    <div class="form-group" id="confirmPasswordGroup" style="display: none;">
+                        <label for="confirmPassword" data-en="Confirm Password" data-ar="تأكيد كلمة المرور">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="••••••••">
+                    </div>
+                    <div class="form-group" id="nameGroup" style="display: none;">
+                        <label for="fullName" data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="John Doe">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span id="submitText" data-en="Sign In" data-ar="تسجيل الدخول">Sign In</span>
+                    </button>
+                </form>
+                <div class="auth-switch">
+                    <p id="switchText" data-en="Don't have an account?" data-ar="ليس لديك حساب؟">Don't have an account?</p>
+                    <button id="switchMode" class="link-btn" data-en="Sign Up" data-ar="إنشاء حساب">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content booking-modal">
+            <div class="modal-header">
+                <h2 data-en="Book Your Hotel Stay" data-ar="احجز إقامتك الفندقية">Book Your Hotel Stay</h2>
+                <button class="close-btn" id="closeBookingModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="booking-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label" data-en="Hotel" data-ar="الفندق">Hotel</div>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label" data-en="Room & Dates" data-ar="الغرفة والتواريخ">Room & Dates</div>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label" data-en="Activities" data-ar="الأنشطة">Activities</div>
+                    </div>
+                    <div class="step" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-label" data-en="Details" data-ar="التفاصيل">Details</div>
+                    </div>
+                    <div class="step" data-step="5">
+                        <div class="step-number">5</div>
+                        <div class="step-label" data-en="Confirm" data-ar="تأكيد">Confirm</div>
+                    </div>
+                </div>
+
+                <form id="bookingForm">
+                    <!-- Step 1: Hotel Selection -->
+                    <div class="booking-step" id="step1">
+                        <h3 data-en="Select Hotel" data-ar="اختر الفندق">Select Hotel</h3>
+                        <div class="hotel-options">
+                            <div class="hotel-option" data-hotel="burj-al-arab">
+                                <div class="hotel-option-image">
+                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200&h=150&fit=crop" alt="Burj Al Arab">
+                                </div>
+                                <div class="hotel-option-info">
+                                    <h4 data-en="Burj Al Arab" data-ar="برج العرب">Burj Al Arab</h4>
+                                    <p data-en="Dubai, UAE - Iconic sail-shaped luxury hotel" data-ar="دبي، الإمارات - فندق فاخر على شكل شراع">Dubai, UAE - Iconic sail-shaped luxury hotel</p>
+                                    <span class="price" data-en="From $800/night" data-ar="من 800 دولار/ليلة">From $800/night</span>
+                                </div>
+                            </div>
+                            <div class="hotel-option" data-hotel="ritz-paris">
+                                <div class="hotel-option-image">
+                                    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=200&h=150&fit=crop" alt="Ritz Paris">
+                                </div>
+                                <div class="hotel-option-info">
+                                    <h4 data-en="The Ritz Paris" data-ar="ريتز باريس">The Ritz Paris</h4>
+                                    <p data-en="Paris, France - Historic luxury hotel" data-ar="باريس، فرنسا - فندق فاخر تاريخي">Paris, France - Historic luxury hotel</p>
+                                    <span class="price" data-en="From $600/night" data-ar="من 600 دولار/ليلة">From $600/night</span>
+                                </div>
+                            </div>
+                            <div class="hotel-option" data-hotel="marina-bay">
+                                <div class="hotel-option-image">
+                                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=200&h=150&fit=crop" alt="Marina Bay Sands">
+                                </div>
+                                <div class="hotel-option-info">
+                                    <h4 data-en="Marina Bay Sands" data-ar="مارينا باي ساندز">Marina Bay Sands</h4>
+                                    <p data-en="Singapore - Futuristic hotel with infinity pool" data-ar="سنغافورة - فندق مستقبلي مع مسبح لا نهائي">Singapore - Futuristic hotel with infinity pool</p>
+                                    <span class="price" data-en="From $400/night" data-ar="من 400 دولار/ليلة">From $400/night</span>
+                                </div>
+                            </div>
+                            <div class="hotel-option" data-hotel="four-seasons">
+                                <div class="hotel-option-image">
+                                    <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=200&h=150&fit=crop" alt="Four Seasons">
+                                </div>
+                                <div class="hotel-option-info">
+                                    <h4 data-en="Four Seasons Resort" data-ar="فور سيزونز ريزورت">Four Seasons Resort</h4>
+                                    <p data-en="Maldives - Tropical paradise with overwater bungalows" data-ar="المالديف - جنة استوائية مع أكواخ فوق الماء">Maldives - Tropical paradise with overwater bungalows</p>
+                                    <span class="price" data-en="From $1200/night" data-ar="من 1200 دولار/ليلة">From $1200/night</span>
+                                </div>
+                            </div>
+                            <div class="hotel-option" data-hotel="palace-istanbul">
+                                <div class="hotel-option-image">
+                                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200&h=150&fit=crop" alt="Palace Istanbul">
+                                </div>
+                                <div class="hotel-option-info">
+                                    <h4 data-en="Palace Istanbul" data-ar="قصر إسطنبول">Palace Istanbul</h4>
+                                    <p data-en="Istanbul, Turkey - Historic luxury with Bosphorus views" data-ar="إسطنبول، تركيا - فخامة تاريخية مع إطلالات البوسفور">Istanbul, Turkey - Historic luxury with Bosphorus views</p>
+                                    <span class="price" data-en="From $450/night" data-ar="من 450 دولار/ليلة">From $450/night</span>
+                                </div>
+                            </div>
+                            <div class="hotel-option" data-hotel="aman-tokyo">
+                                <div class="hotel-option-image">
+                                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200&h=150&fit=crop" alt="Aman Tokyo">
+                                </div>
+                                <div class="hotel-option-info">
+                                    <h4 data-en="Aman Tokyo" data-ar="أمان طوكيو">Aman Tokyo</h4>
+                                    <p data-en="Tokyo, Japan - Ultra-luxury urban resort" data-ar="طوكيو، اليابان - منتجع حضري فائق الفخامة">Tokyo, Japan - Ultra-luxury urban resort</p>
+                                    <span class="price" data-en="From $900/night" data-ar="من 900 دولار/ليلة">From $900/night</span>
+                                </div>
+                            </div>
+                            <div class="hotel-option" data-hotel="belmond-copacabana">
+                                <div class="hotel-option-image">
+                                    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=200&h=150&fit=crop" alt="Belmond Copacabana">
+                                </div>
+                                <div class="hotel-option-info">
+                                    <h4 data-en="Belmond Copacabana Palace" data-ar="قصر بلموند كوباكابانا">Belmond Copacabana Palace</h4>
+                                    <p data-en="Rio de Janeiro, Brazil - Iconic beachfront hotel" data-ar="ريو دي جانيرو، البرازيل - فندق ساحلي أيقوني">Rio de Janeiro, Brazil - Iconic beachfront hotel</p>
+                                    <span class="price" data-en="From $550/night" data-ar="من 550 دولار/ليلة">From $550/night</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Room & Dates -->
+                    <div class="booking-step" id="step2" style="display: none;">
+                        <h3 data-en="Select Room & Dates" data-ar="اختر الغرفة والتواريخ">Select Room & Dates</h3>
+                        <div class="room-dates-selection">
+                            <div class="date-range">
+                                <div class="form-group">
+                                    <label for="checkInDate" data-en="Check-in Date" data-ar="تاريخ الوصول">Check-in Date</label>
+                                    <input type="date" id="checkInDate" name="checkInDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="checkOutDate" data-en="Check-out Date" data-ar="تاريخ المغادرة">Check-out Date</label>
+                                    <input type="date" id="checkOutDate" name="checkOutDate" required>
+                                </div>
+                            </div>
+                            <div class="room-selection">
+                                <label data-en="Room Type" data-ar="نوع الغرفة">Room Type</label>
+                                <div class="room-options">
+                                    <div class="room-option" data-room="standard">
+                                        <div class="room-info">
+                                            <h4 data-en="Standard Room" data-ar="غرفة عادية">Standard Room</h4>
+                                            <p data-en="Comfortable room with city view" data-ar="غرفة مريحة مع إطلالة على المدينة">Comfortable room with city view</p>
+                                            <span class="room-price" data-en="+$0/night" data-ar="+0 دولار/ليلة">+$0/night</span>
+                                        </div>
+                                    </div>
+                                    <div class="room-option" data-room="deluxe">
+                                        <div class="room-info">
+                                            <h4 data-en="Deluxe Room" data-ar="غرفة ديلوكس">Deluxe Room</h4>
+                                            <p data-en="Spacious room with premium amenities" data-ar="غرفة واسعة مع مرافق فاخرة">Spacious room with premium amenities</p>
+                                            <span class="room-price" data-en="+$100/night" data-ar="+100 دولار/ليلة">+$100/night</span>
+                                        </div>
+                                    </div>
+                                    <div class="room-option" data-room="suite">
+                                        <div class="room-info">
+                                            <h4 data-en="Luxury Suite" data-ar="جناح فاخر">Luxury Suite</h4>
+                                            <p data-en="Premium suite with separate living area" data-ar="جناح فاخر مع منطقة معيشة منفصلة">Premium suite with separate living area</p>
+                                            <span class="room-price" data-en="+$300/night" data-ar="+300 دولار/ليلة">+$300/night</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Activities -->
+                    <div class="booking-step" id="step3" style="display: none;">
+                        <h3 data-en="Select Activities" data-ar="اختر الأنشطة">Select Activities</h3>
+                        <div class="activities-selection">
+                            <p data-en="Enhance your stay with these exclusive activities" data-ar="عزز إقامتك مع هذه الأنشطة الحصرية">Enhance your stay with these exclusive activities</p>
+                            <div class="activity-options">
+                                <div class="activity-option" data-activity="spa">
+                                    <div class="activity-checkbox">
+                                        <input type="checkbox" id="spaActivity" name="activities" value="spa">
+                                        <label for="spaActivity"></label>
+                                    </div>
+                                    <div class="activity-info">
+                                        <h4 data-en="Luxury Spa Package" data-ar="باقة سبا فاخرة">Luxury Spa Package</h4>
+                                        <p data-en="Full day spa experience with treatments" data-ar="تجربة سبا ليوم كامل مع علاجات">Full day spa experience with treatments</p>
+                                        <span class="activity-price" data-en="$150" data-ar="150 دولار">$150</span>
+                                    </div>
+                                </div>
+                                <div class="activity-option" data-activity="dining">
+                                    <div class="activity-checkbox">
+                                        <input type="checkbox" id="diningActivity" name="activities" value="dining">
+                                        <label for="diningActivity"></label>
+                                    </div>
+                                    <div class="activity-info">
+                                        <h4 data-en="Fine Dining Experience" data-ar="تجربة مطعم راقي">Fine Dining Experience</h4>
+                                        <p data-en="Michelin-starred restaurant reservation" data-ar="حجز في مطعم حاصل على نجمة ميشلان">Michelin-starred restaurant reservation</p>
+                                        <span class="activity-price" data-en="$80" data-ar="80 دولار">$80</span>
+                                    </div>
+                                </div>
+                                <div class="activity-option" data-activity="fitness">
+                                    <div class="activity-checkbox">
+                                        <input type="checkbox" id="fitnessActivity" name="activities" value="fitness">
+                                        <label for="fitnessActivity"></label>
+                                    </div>
+                                    <div class="activity-info">
+                                        <h4 data-en="Personal Training Session" data-ar="جلسة تدريب شخصي">Personal Training Session</h4>
+                                        <p data-en="One-on-one fitness training with expert trainer" data-ar="تدريب لياقة شخصي مع مدرب خبير">One-on-one fitness training with expert trainer</p>
+                                        <span class="activity-price" data-en="$25" data-ar="25 دولار">$25</span>
+                                    </div>
+                                </div>
+                                <div class="activity-option" data-activity="entertainment">
+                                    <div class="activity-checkbox">
+                                        <input type="checkbox" id="entertainmentActivity" name="activities" value="entertainment">
+                                        <label for="entertainmentActivity"></label>
+                                    </div>
+                                    <div class="activity-info">
+                                        <h4 data-en="VIP Entertainment Access" data-ar="وصول ترفيهي مميز">VIP Entertainment Access</h4>
+                                        <p data-en="Exclusive access to hotel shows and events" data-ar="وصول حصري لعروض وفعاليات الفندق">Exclusive access to hotel shows and events</p>
+                                        <span class="activity-price" data-en="$50" data-ar="50 دولار">$50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Details -->
+                    <div class="booking-step" id="step4" style="display: none;">
+                        <h3 data-en="Booking Details" data-ar="تفاصيل الحجز">Booking Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bookingName" data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
+                                <input type="text" id="bookingName" name="bookingName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingPhone" data-en="Phone Number" data-ar="رقم الهاتف">Phone Number</label>
+                                <input type="tel" id="bookingPhone" name="bookingPhone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingEmail" data-en="Email" data-ar="البريد الإلكتروني">Email</label>
+                            <input type="email" id="bookingEmail" name="bookingEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingNotes" data-en="Special Requests (Optional)" data-ar="طلبات خاصة (اختياري)">Special Requests (Optional)</label>
+                            <textarea id="bookingNotes" name="bookingNotes" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Confirmation -->
+                    <div class="booking-step" id="step5" style="display: none;">
+                        <h3 data-en="Confirm Your Booking" data-ar="أكد حجزك">Confirm Your Booking</h3>
+                        <div class="booking-summary">
+                            <div class="summary-item">
+                                <span data-en="Hotel:" data-ar="الفندق:">Hotel:</span>
+                                <span id="summaryHotel">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <span data-en="Room Type:" data-ar="نوع الغرفة:">Room Type:</span>
+                                <span id="summaryRoom">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <span data-en="Check-in:" data-ar="تاريخ الوصول:">Check-in:</span>
+                                <span id="summaryCheckIn">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <span data-en="Check-out:" data-ar="تاريخ المغادرة:">Check-out:</span>
+                                <span id="summaryCheckOut">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <span data-en="Nights:" data-ar="عدد الليالي:">Nights:</span>
+                                <span id="summaryNights">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <span data-en="Activities:" data-ar="الأنشطة:">Activities:</span>
+                                <span id="summaryActivities">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <span data-en="Name:" data-ar="الاسم:">Name:</span>
+                                <span id="summaryName">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <span data-en="Phone:" data-ar="الهاتف:">Phone:</span>
+                                <span id="summaryPhone">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <span data-en="Email:" data-ar="البريد الإلكتروني:">Email:</span>
+                                <span id="summaryEmail">-</span>
+                            </div>
+                            <div class="summary-item total">
+                                <span data-en="Total:" data-ar="المجموع:">Total:</span>
+                                <span id="summaryTotal">$0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="booking-navigation">
+                        <button type="button" class="btn btn-outline" id="prevStep" style="display: none;" data-en="Previous" data-ar="السابق">Previous</button>
+                        <button type="button" class="btn btn-primary" id="nextStep" data-en="Next" data-ar="التالي">Next</button>
+                        <button type="submit" class="btn btn-primary" id="confirmBooking" style="display: none;" data-en="Confirm Booking" data-ar="أكد الحجز">Confirm Booking</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Modal -->
+    <div id="dashboardModal" class="modal">
+        <div class="modal-content dashboard-modal">
+            <div class="modal-header">
+                <h2 data-en="My Dashboard" data-ar="لوحة التحكم">My Dashboard</h2>
+                <button class="close-btn" id="closeDashboardModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="dashboard-tabs">
+                    <button class="tab-btn active" data-tab="profile" data-en="Profile" data-ar="الملف الشخصي">Profile</button>
+                    <button class="tab-btn" data-tab="upcoming" data-en="Upcoming" data-ar="القادمة">Upcoming</button>
+                    <button class="tab-btn" data-tab="history" data-en="History" data-ar="السابقة">History</button>
+                    <button class="tab-btn" data-tab="settings" data-en="Settings" data-ar="الإعدادات">Settings</button>
+                </div>
+                <div class="dashboard-content">
+                    <!-- Profile Tab -->
+                    <div class="tab-content active" id="profileTab">
+                        <div class="profile-section">
+                            <div class="profile-header">
+                                <div class="profile-info">
+                                    <h3 id="profileName">Demo User</h3>
+                                    <p id="profileEmail">demo@example.com</p>
+                                    <div class="profile-stats">
+                                        <div class="stat">
+                                            <span class="stat-number" id="totalBookings">0</span>
+                                            <span class="stat-label" data-en="Total Bookings" data-ar="إجمالي الحجوزات">Total Bookings</span>
+                                        </div>
+                                        <div class="stat">
+                                            <span class="stat-number" id="totalSpent">$0</span>
+                                            <span class="stat-label" data-en="Total Spent" data-ar="إجمالي المصروف">Total Spent</span>
+                                        </div>
+                                        <div class="stat">
+                                            <span class="stat-number" id="memberSince">2024</span>
+                                            <span class="stat-label" data-en="Member Since" data-ar="عضو منذ">Member Since</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="profile-form">
+                                <h4 data-en="Personal Information" data-ar="المعلومات الشخصية">Personal Information</h4>
+                                <form id="profileForm">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="profileFullName" data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
+                                            <input type="text" id="profileFullName" name="fullName" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="profilePhone" data-en="Phone Number" data-ar="رقم الهاتف">Phone Number</label>
+                                            <input type="tel" id="profilePhone" name="phone" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="profileEmailField" data-en="Email Address" data-ar="عنوان البريد الإلكتروني">Email Address</label>
+                                        <input type="email" id="profileEmailField" name="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="profileBio" data-en="Bio" data-ar="نبذة شخصية">Bio</label>
+                                        <textarea id="profileBio" name="bio" rows="3" placeholder="Tell us about yourself..."></textarea>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary" data-en="Save Changes" data-ar="حفظ التغييرات">Save Changes</button>
+                                        <button type="button" class="btn btn-outline" id="cancelProfileEdit" data-en="Cancel" data-ar="إلغاء">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Upcoming Bookings Tab -->
+                    <div class="tab-content" id="upcomingTab">
+                        <div class="bookings-list" id="upcomingBookings">
+                            <!-- Upcoming bookings will be populated here -->
+                        </div>
+                    </div>
+                    
+                    <!-- History Tab -->
+                    <div class="tab-content" id="historyTab">
+                        <div class="bookings-list" id="historyBookings">
+                            <!-- Booking history will be populated here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Settings Tab -->
+                    <div class="tab-content" id="settingsTab">
+                        <div class="settings-section">
+                            <h4 data-en="Account Settings" data-ar="إعدادات الحساب">Account Settings</h4>
+                            <div class="settings-group">
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h5 data-en="Change Password" data-ar="تغيير كلمة المرور">Change Password</h5>
+                                        <p data-en="Update your account password" data-ar="تحديث كلمة مرور حسابك">Update your account password</p>
+                                    </div>
+                                    <button class="btn btn-outline" id="changePasswordBtn" data-en="Change" data-ar="تغيير">Change</button>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h5 data-en="Email Notifications" data-ar="إشعارات البريد الإلكتروني">Email Notifications</h5>
+                                        <p data-en="Manage your email notification preferences" data-ar="إدارة تفضيلات إشعارات البريد الإلكتروني">Manage your email notification preferences</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="emailNotifications" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h5 data-en="SMS Notifications" data-ar="إشعارات الرسائل النصية">SMS Notifications</h5>
+                                        <p data-en="Receive SMS updates about your bookings" data-ar="تلقي تحديثات الرسائل النصية حول حجوزاتك">Receive SMS updates about your bookings</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="smsNotifications">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <h4 data-en="Privacy Settings" data-ar="إعدادات الخصوصية">Privacy Settings</h4>
+                            <div class="settings-group">
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h5 data-en="Profile Visibility" data-ar="رؤية الملف الشخصي">Profile Visibility</h5>
+                                        <p data-en="Control who can see your profile information" data-ar="التحكم في من يمكنه رؤية معلومات ملفك الشخصي">Control who can see your profile information</p>
+                                    </div>
+                                    <select id="profileVisibility" class="setting-select">
+                                        <option value="public" data-en="Public" data-ar="عام">Public</option>
+                                        <option value="friends" data-en="Friends Only" data-ar="الأصدقاء فقط">Friends Only</option>
+                                        <option value="private" data-en="Private" data-ar="خاص">Private</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="danger-zone">
+                                <h4 data-en="Danger Zone" data-ar="منطقة الخطر">Danger Zone</h4>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h5 data-en="Delete Account" data-ar="حذف الحساب">Delete Account</h5>
+                                        <p data-en="Permanently delete your account and all data" data-ar="حذف حسابك وجميع البيانات نهائياً">Permanently delete your account and all data</p>
+                                    </div>
+                                    <button class="btn btn-danger" id="deleteAccountBtn" data-en="Delete Account" data-ar="حذف الحساب">Delete Account</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Notification -->
+    <div id="successNotification" class="notification">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span data-en="Booking confirmed successfully!" data-ar="تم تأكيد الحجز بنجاح!">Booking confirmed successfully!</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    </main>
+</body>
+</html>
